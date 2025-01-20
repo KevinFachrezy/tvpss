@@ -1,26 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Application Dashboard | TVPSS MIS</title>
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register Studio | TVPSS MIS</title>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome for icons -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <style>
-      <%@include file="/WEB-INF/views/css/sidebars.css"%>
+        <%@ include file="/WEB-INF/views/css/sidebars.css" %>
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
 	<div class="d-flex" style="min-height: 100vh">
 		<!-- Sidebar Include -->
 		<%@ include file="/WEB-INF/views/fragments/sidebar.jsp"%>
@@ -73,8 +68,8 @@
             <tr>
               <th>Application ID</th>
               <th>Program ID</th>
-              <th>Status</th>
               <th>Apply Date</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -85,13 +80,13 @@
                     <td>${application.applicationId}</td>
                     <td>${application.programId}</td>
                     <td>
-                      <span
-                        class="badge bg-${application.status == 'Accepted' ? 'success' : application.status == 'Rejected' ? 'danger' : 'warning'}"
-                      >
-                        ${application.status}
-                      </span>
+                      ${application.applyDate}
                     </td>
-                    <td>${application.applyDate}</td>
+                    <td> <span
+                        class="badge bg-${application.status == 'Accepted' ? 'success' : application.status == 'Rejected' ? 'danger' : 'warning'}">
+                        ${application.status}
+                        </span>
+                    </td>
                   </tr>
                 </c:forEach>
               </c:when>

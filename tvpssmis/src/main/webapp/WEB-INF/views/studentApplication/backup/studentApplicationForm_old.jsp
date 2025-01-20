@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,11 +14,12 @@
         <%@ include file="/WEB-INF/views/css/sidebars.css" %>
     </style>
 </head>
-<body>
-    <div class="d-flex" style="min-height: 100vh;">
-    <!-- Sidebar Include -->
-      <%@ include file="/WEB-INF/views/fragments/sidebar.jsp" %>    
-    	<div class="container-fluid p-4">
+
+<body> 
+    <div class="d-flex" style="min-height: 100vh">
+		<!-- Sidebar Include -->
+		<%@ include file="/WEB-INF/views/fragments/sidebar.jsp"%>
+	    <div class="container-fluid p-4">
 			<h1 class="mb-4">Application Form</h1>
 			<div class="row justify-content-center">
 				<div class="col-md-12">
@@ -28,24 +30,14 @@
 	        				<div class="row">
 								<br><br><br>
 								<div class= "col-md-6-3">
-			        				<label class="form-label" for="skills">Skills:</label>
+			        				<label class="form-label" for="programId">Skills:</label>
 						        	<input type="text" class="form-control" id="skills" name="skills" placeholder= "Enter skills" required/>
 								</div>
 								<br><br><br>
 								<div class= "col-md-6-3">
-			        				<label class="form-label" for="interests">Interest:</label>
+			        				<label class="form-label" for="programId">Interest:</label>
 						        	<input type="text" class="form-control" id="interests" name="interests" placeholder= "Enter Interests" required/>
 								</div>
-								<div class="col-md-6 mb-3">
-								<label class="form-label">Associated Program</label> <select
-									class="form-select" name="programId" required>
-									<option value="" disabled selected>Select Program</option>
-									<c:forEach var="program" items="${programs}">
-										<option value="${program.programId}">
-											${program.youTubeChannelLink}</option>
-									</c:forEach>
-								</select>
-							</div>
 				        	</div>
 						</div>
 						<br>
